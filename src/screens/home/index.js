@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TextInput, TouchableOpacity, Image, View, StyleSheet, ScrollView, WebView, Linking } from 'react-native';
+import { Text, TextInput, TouchableOpacity, Image, View, StyleSheet, ScrollView, FlatList, WebView, Linking } from 'react-native';
 //import styles from '../../components/topBar/style'
 //import topBar from '../../components/topBar'
 
@@ -28,14 +28,14 @@ export default class Home extends Component {
               <Text style = {styles.linkText}>View all brands</Text>  
             </View>
             <View style = {styles.brandImagesWrapper}>
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/61/83/b2/6183b29a7efa4e2bcca418ee82a155b0.jpg'}} />
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/42/bd/b5/42bdb51d1fde572f90374a835e9b1693.jpg'}} />
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/d3/07/46/d3074681f7277762a16cb1a2467b2900.jpg'}} />
+              <Image style = {styles.brandImage} source={require('../../../assets/img/hammer.jpg')} />
+              <Image style = {styles.brandImage} source={require('../../../assets/img/egg.jpg')}/>
+              <Image style = {styles.brandImage} source={require('../../../assets/img/orange.jpg')} />
             </View>
             <View style = {[styles.brandImagesWrapper, {marginTop: 20}]}>
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/92/66/6a/92666a298e30d7931ca59ac57a36cc46.jpg'}} />
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/dd/3b/32/dd3b32aaa16560b410837bfc03aba9fc.jpg'}} />
-              <Image style = {styles.brandImage} source = {{uri: 'https://i.pinimg.com/564x/27/d7/67/27d767b54f64808d3373428811a92726.jpg'}} />
+              <Image style = {styles.brandImage} source={require('../../../assets/img/building.jpg')} />
+              <Image style = {styles.brandImage} source={require('../../../assets/img/donut.jpg')} />
+              <Image style = {styles.brandImage} source={require('../../../assets/img/container.jpg')} />
             </View>
           </View>
           <View style = {styles.cardWrapper}>
