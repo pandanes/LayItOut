@@ -2,19 +2,17 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     topBar: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        width: 360,
-        height: 80,
-        backgroundColor: 'rgba(247,112,98,1)'
-    }
-    ,
-    pageTitle: {
+        height: 60,
+        backgroundColor: '#4A90E2'
+      },
+      pageTitle: {
         fontFamily: 'Roboto-Medium',
-        fontSize: 12,
-        fontColor: 'rgba(255,255,255,1)'
-    }
+        fontSize: 16,
+        color: 'rgba(255, 255, 255, 1.0)',
+        letterSpacing: 4   
+      }
 })
 
 export default styles
