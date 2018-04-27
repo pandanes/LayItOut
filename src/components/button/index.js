@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import styles from './style'
+import { StackNavigator, TabNavigator } from 'react-navigation'
 
 const Button = (props) => (
      <TouchableOpacity

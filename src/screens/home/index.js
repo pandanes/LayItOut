@@ -4,6 +4,7 @@ import { Text, TextInput, TouchableOpacity, Image, Button, View, StyleSheet, Scr
 //import topBar from '../../components/topBar'
 import axios from 'axios'
 import { StackNavigator, TabNavigator } from 'react-navigation'
+import { connect } from 'react-redux'
 
 class Home extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Home extends Component {
   } */
 // }
 
-  componentWillMount() {
+  componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/users')
       .then(response => this.setState({flatListItems: response.data}))
       .catch(err => console.log('landing error'))
@@ -74,7 +75,7 @@ class Home extends Component {
       <View style = {styles.container}>
         <ScrollView>
           <View style = {styles.topBar}>
-            <Text style ={styles.pageTitle}>HOME</Text>
+            <Text style ={styles.pageTitle}>HOME, kinda</Text>
           </View>
           <ScrollView horizontal = {true} showsHorizontalScrollIndicator = {false}>
             <View style = {styles.promoCard}>
@@ -165,15 +166,32 @@ class Home extends Component {
 });
  */
 
+ const mapStateToProps = state => state.register
+
 class SettingsScreen extends React.Component {
+
+  /* async componentDidMount() {
+    try {
+      const data = await AsyncStorage.getItem('data')
+      console.log(data)
+      this.setState({ username: data.username, email: data.email })
+    } catch (error) {
+      console.log(error.message)
+    }
+  } */
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Settings!</Text>
+        <Text>{this.props.username}</Text>
+        <Text>{this.props.email}</Text>
       </View>
     );
   }
 }
+
+const Settings = connect(mapStateToProps)(SettingsScreen)
 
 const { width } = Dimensions.get('window')
 
@@ -280,5 +298,5 @@ const styles = StyleSheet.create({
 
 export default TabNavigator({
   Home: { screen: Home },
-  Settings: { screen: SettingsScreen },
+  Settings: { screen: Settings },
 });
